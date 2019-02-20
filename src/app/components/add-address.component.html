@@ -1,0 +1,41 @@
+<h2>Address</h2>
+<!--clicking on Add button will invoke ngSubmit as the button has type="submit"-->
+<!--Current form is declared addrForm-->
+<form #addrForm="ngForm" (ngSubmit)="processForm(addrForm)">
+  <table>
+    <tr>
+      <td>
+        Valid: {{ addrForm.valid }}
+      </td>
+      <td>
+        Invalid: {{ addrForm.invalid }}
+      </td>
+    </tr>
+    <tr>
+      <td>Name: **</td>
+      <td>
+        <input type="text" name="name" ngModel required>
+      </td>
+    </tr>
+    <tr>
+      <td>Phone: **</td>
+      <td>
+        <input type="tel" name="phone" ngModel required>
+      </td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>
+        <input type="email" name="email" ngModel>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" [disabled]="addrForm.invalid">
+          Add
+        </button>
+      </td>
+    </tr>
+  </table>
+</form>
